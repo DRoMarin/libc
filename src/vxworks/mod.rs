@@ -1746,6 +1746,12 @@ extern "C" {
         param: *const ::_Sched_param,
     ) -> ::c_int;
 
+    pub fn pthread_getschedparam(
+        native: ::pthread_t,
+        policy: *mut ::c_int,
+        param: *mut ::_Sched_param,
+    ) -> ::c_int;
+
     // errnoLib.h
     pub fn errnoSet(err: ::c_int) -> ::c_int;
 
