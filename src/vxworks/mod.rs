@@ -1746,6 +1746,7 @@ extern "C" {
         param: *const ::_Sched_param,
     ) -> ::c_int;
 
+    // pthread.h
     pub fn pthread_getschedparam(
         native: ::pthread_t,
         policy: *mut ::c_int,
