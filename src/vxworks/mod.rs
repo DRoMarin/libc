@@ -1033,6 +1033,13 @@ pub const MAP_CONTIG: ::c_int = 0x0020;
 
 pub const MAP_FAILED: *mut ::c_void = !0 as *mut ::c_void;
 
+// sched.h
+pub const  SCHED_OTHER: ::c_int = 0;
+pub const  SCHED_FIFO: ::c_int = 1;
+pub const  SCHED_RR: ::c_int = 2;
+
+
+
 #[cfg_attr(feature = "extra_traits", derive(Debug))]
 pub enum FILE {}
 impl ::Copy for FILE {}
@@ -1725,6 +1732,19 @@ extern "C" {
 
     // sched.h
     pub fn sched_yield() -> ::c_int;
+
+    // sched.h
+    pub fn sched_get_priority_max(policy: ::c_int) -> ::c_int;
+
+    // sched.h
+    pub fn sched_get_priority_min(policy: ::c_int) -> ::c_int;
+
+    // pthread.h
+    pub fn pthread_setschedparam(
+        native: ::pthread_t,
+        policy: ::c_int,
+        param: *const ::_Sched_param,
+    ) -> ::c_int;
 
     // errnoLib.h
     pub fn errnoSet(err: ::c_int) -> ::c_int;
