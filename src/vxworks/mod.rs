@@ -1034,9 +1034,10 @@ pub const MAP_CONTIG: ::c_int = 0x0020;
 pub const MAP_FAILED: *mut ::c_void = !0 as *mut ::c_void;
 
 // sched.h
-pub const  SCHED_OTHER: ::c_int = 0;
 pub const  SCHED_FIFO: ::c_int = 1;
 pub const  SCHED_RR: ::c_int = 2;
+pub const  SCHED_OTHER: ::c_int = 4;
+pub const  SCHED_SPORADIC: ::c_int = 8;
 
 
 
